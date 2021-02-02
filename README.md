@@ -28,7 +28,7 @@ There are available the following commands:
 
 ### Command: [create-view]
 
-The import command allows you to create a new view.
+The create-view command allows you to create a new view.
 
 #### Flags
 ##### Required flags
@@ -56,7 +56,7 @@ postgres create-view \
 
 ### Command: [delete-view]
 
-The import command allows you to delete a view.
+The delete-view command allows you to delete a view.
 
 #### Flags
 ##### Required flags
