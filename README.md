@@ -1,1 +1,1 @@
-# postges-tool
+# postgres-tool
