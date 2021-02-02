@@ -78,3 +78,28 @@ postgres delete-view \
   --postgres-password="XaD2sd$34Sdas1$ae" \
   --postgres-database="postgres" 
 ```
+
+### Command: [delete-table]
+
+The delete-table command allows you to delete a table.
+
+#### Flags
+##### Required flags
+- `--table-name=` The name of the table to delete
+- `--postgres-address=` The database address and port.
+- `--postgres-user=` The database user.
+- `--postgres-password=` The database password.
+- `--postgres-database=` The destination name database.
+
+##### Optional flags
+
+#### Example
+Here an example of this command:
+```
+postgres delete-table \
+  --table-name="vessels" \
+  --postgres-address="localhost:5432" \
+  --postgres-user="postgres" \
+  --postgres-password="XaD2sd$34Sdas1$ae" \
+  --postgres-database="postgres" 
+```
