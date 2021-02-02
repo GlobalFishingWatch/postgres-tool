@@ -16,7 +16,7 @@ func CreateView(params types.CreateViewParams, postgresConfig types.PostgresConf
 
 	psClient = common.CreatePostgresClient(ctx, postgresConfig)
 	defer psClient.Close(ctx)
-	log.Println("Creating table to check if exists before the query")
+	log.Println("Creating a view")
 	createView(ctx, params.ViewName, params.TableName)
 }
 

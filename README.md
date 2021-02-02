@@ -44,8 +44,34 @@ The import command allows you to create a new view.
 #### Example
 Here an example of this command:
 ```
-bq2psql import \
+postgres create-view \
   --table-name="vessels_2021_02_01" \
+  --view-name="vessels" \
+  --postgres-address="localhost:5432" \
+  --postgres-user="postgres" \
+  --postgres-password="XaD2sd$34Sdas1$ae" \
+  --postgres-database="postgres" 
+```
+
+
+### Command: [delete-view]
+
+The import command allows you to delete a view.
+
+#### Flags
+##### Required flags
+- `--view-name=` The name of the destination view
+- `--postgres-address=` The database address and port.
+- `--postgres-user=` The database user.
+- `--postgres-password=` The database password.
+- `--postgres-database=` The destination name database.
+
+##### Optional flags
+
+#### Example
+Here an example of this command:
+```
+postgres delete-view \
   --view-name="vessels" \
   --postgres-address="localhost:5432" \
   --postgres-user="postgres" \
