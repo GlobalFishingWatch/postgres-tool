@@ -103,3 +103,32 @@ postgres delete-table \
   --postgres-password="XaD2sd$34Sdas1$ae" \
   --postgres-database="postgres" 
 ```
+
+### Command: [create-index]
+
+The create-index command allows you to create a index for an existing table.
+
+#### Flags
+##### Required flags
+- `--table-name=` The name of the destination table
+- `--index-name=` The name of the new index
+- `--column=` The name of the column
+- `--postgres-address=` The database address and port.
+- `--postgres-user=` The database user.
+- `--postgres-password=` The database password.
+- `--postgres-database=` The destination name database.
+
+##### Optional flags
+
+#### Example
+Here an example of this command:
+```
+postgres delete-table \
+  --table-name="vessels" \
+  --index-name="vessels_id_index" \
+  --column="id" \
+  --postgres-address="localhost:5432" \
+  --postgres-user="postgres" \
+  --postgres-password="XaD2sd$34Sdas1$ae" \
+  --postgres-database="postgres" 
+```
