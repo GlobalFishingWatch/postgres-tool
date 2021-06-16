@@ -132,3 +132,30 @@ postgres delete-table \
   --postgres-password="XaD2sd$34Sdas1$ae" \
   --postgres-database="postgres" 
 ```
+
+### Command: [create-index]
+
+The execute-raw-sql command allows you to execute one or more sql statements at once.
+
+#### Flags
+##### Required flags
+- `--sql=` The sql statements
+- `--postgres-address=` The database address and port.
+- `--postgres-user=` The database user.
+- `--postgres-password=` The database password.
+- `--postgres-database=` The destination name database.
+
+##### Optional flags
+
+#### Example
+Here an example of this command:
+```
+go run main.go \
+  execute-raw-sql \
+  --sql="CREATE TABLE IF NOT EXISTS public.event_test (id BIGSERIAL, event_start timestamp without time zone NOT NULL, event_end timestamp without time zone, primary key (id, event_start)) PARTITION BY RANGE (event_start); CREATE TABLE IF NOT EXISTS public.event_test_2021  PARTITION OF public.event_test FOR VALUES FROM ('2021-01-01') TO ('2020-01-01');" \
+  --postgres-address=localhost:5432 \
+  --postgres-user=postgres \
+  --postgres-password=a1234567 \ 
+  --postgres-database=postgres
+
+```
