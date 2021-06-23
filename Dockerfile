@@ -12,5 +12,6 @@ RUN go build -o postgres-tool main.go
 CMD ["reflex", "-c", "./reflex.conf"]
 
 FROM alpine AS build
-COPY --from=development /go/src/app/postgres-tool /opt/postgres-tool
+WORKDIR /opt/
+COPY --from=development /go/src/app/postgres-tool postgres
 ENTRYPOINT ["/opt/postgres-tool"]
