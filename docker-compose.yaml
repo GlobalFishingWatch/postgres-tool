@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  postgres-tool:
+    build:
+      context: .
+      target: development
+    volumes:
+      - '.:/go/src/app'
+      - '~/.config/gcloud:/root/.config/gcloud'
