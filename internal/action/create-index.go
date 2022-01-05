@@ -20,7 +20,7 @@ func CreateIndex(params types.CreateIndexParam, postgresConfig types.PostgresCon
 
 func createIndex(ctx context.Context, psClient *pgx.Conn, tableName string, indexName string, column string) {
 	createViewCommand := fmt.Sprintf(`
-		CREATE INDEX %s 
+		CREATE INDEX IF NOT EXISTS %s 
     		ON %s(%s)
 		`, indexName, tableName, column)
 	log.Printf("→ PG →→ Creating index with command %s", createViewCommand)
